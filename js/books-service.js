@@ -36,7 +36,7 @@ function getBooksForDisplay() {
 //DELETE
 function deleteBook(bookId) {
     var bookIdx = gBooks.findIndex(function (book) {
-        return bookId === book.id;
+        return bookId === `${book.id}`;
     });
     gBooks.splice(bookIdx, 1);
     _saveBooksToStorage();
@@ -63,7 +63,7 @@ function updatebook(bookId, bookPrice) {
 //READ
 function getBookById(bookId) {
     var book = gBooks.find(function (book) {
-        return bookId === +`${book.id}`; //added + because bookId is a num and book.id is a string
+        return bookId === `${book.id}`; //added + because bookId is a num and book.id is a string
     });
     return book;
 }
@@ -115,9 +115,7 @@ function reduceRate(bookId) {
     var str = elRate.innerText;
     str = str.slice(1);
     elRate.innerText = str;
-    var book = gBooks.find(function (book) {
-        return bookId === book.id;
-    });
+    var book = getBookById(bookId);
     book.rate = elRate.innerText;
     _saveBooksToStorage();
 }
