@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-image: url('/img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    align-self: center;
+    font-size: 40px;
+    color: blanchedalmond;
+}
+
+h1 {
+    margin-bottom: 0px;
+}
+
+.add-container {
+    margin-top: 0px;
+    color: blanchedalmond;
+}
+
+h2 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.paging {
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: lightgray;
+    width: 70px;
+    height: 20px;
+}
+
+.books-table-container {
+    margin: 10px auto;
+    padding-right: 15px ;
+    padding-left: 10px ;
+    background-color: rgba(240, 255, 240, 0.5);
+    border-radius: 10px;
+}
+
+.books-table {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: 1px rgb(65, 63, 63) solid;
+    padding: 10px;
+}
+
+td {
+    border-top: 1px rgb(65, 63, 63) solid;
+    padding: 10px;
+}
+
+.book-img-top {
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 1px black;
+}
+
+.read-btn {
+    border: none;
+    border-radius: 3px;
+    background-color: green;
+    color: honeydew;
+    box-shadow: 0px 0px 5px 1px black;
+    transition: 0.7s;
+}
+
+.read-btn:hover {
+    transform: scale(1.3);
+    background-color: honeydew;
+    color: green;
+    box-shadow: none
+}
+
+.update-btn {
+    margin-top: 33px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: orangered;
+    color: honeydew;
+    box-shadow: 0px 0px 5px 1px black;
+    transition: 0.7s;
+}
+
+.update-btn:hover {
+    transform: scale(1.3);
+    background-color: honeydew;
+    color: orangered;
+    box-shadow: none
+}
+
+.books-table input {
+    width: 100px;
+}
+
+.delete-btn {
+    border: none;
+    border-radius: 3px;
+    background-color: red;
+    color: honeydew;
+    box-shadow: 0px 0px 5px 1px black;
+    transition: 0.7s;
+}
+
+.delete-btn:hover {
+    transform: scale(1.3);
+    background-color: honeydew;
+    color: red;
+    box-shadow: none
+}
+
+.modal {
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 30%;
+    left: 40%;
+    background-color: rgb(240, 255, 240, 0.8);
+    border-radius: 10px;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: 0px 0px 11px 5px black;
+    padding: 20px;
+}
+
+.modal img {
+    transition: 0.5s;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 1px black;
+}
+
+.modal img:hover {
+    transform: scale(1.3);
+}
+
+.desc-cont {
+    max-width: 300px;
+    overflow-wrap: break-word;
+}
+
+.rate-cont {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.close {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background-color: honeydew;
+    border: none;
+    font-weight: bold;
+}
