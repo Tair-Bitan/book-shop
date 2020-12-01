@@ -10,30 +10,37 @@
 
 <body onload="onInit()">
     <header>
-        <h1>Book Store</h1>
+        <h1 data-trans="title">Book Store</h1>
     </header>
     <section class="add-container">
-        <h2>Add Book</h2>
+        <h2 data-trans="add">Add Book</h2>
         <select id="nameList" name="nameList"></select>
-        <input type="number" name="price" placeholder="Price" style="width: 70px; "/>
-        <button onclick="onAddBook()">Add</button>
+        <input data-trans="add-book-placeholder" type="number" name="price" placeholder="Price" style="width: 70px; " />
+        <button data-trans="add" onclick="onAddBook()">Add Book</button>
     </section>
     <div class="paging">
         <button class="previous" onclick="onChangePage(-1)">&lt;</button>
         <span class="page-num">1</span>
         <button class="next" onclick="onChangePage(1)">&gt;</button>
     </div>
+    <div class="lang">
+        <select onchange="onSetLang(this.value)">
+            <option value="en">English</option>
+            <option value="es">español</option>
+            <option value="he">עברית</option>
+        </select>
+    </div>
     <section class="books-table-container">
         <table class="books-table">
             <thead>
                 <tr>
-                    <th onclick="onThClick('id')" style="cursor: pointer;">⇅ ID</th>
-                    <th style="cursor: default;">Image</th>
-                    <th onclick="onThClick('title')" style="cursor: pointer;">⇅ Title</th>
-                    <th onclick="onThClick('price')" style="cursor: pointer;">⇅ Price</th>
+                    <th data-trans="id" onclick="onThClick('id')" style="cursor: pointer;">⇅ ID</th>
+                    <th data-trans="image" style="cursor: default;">Image</th>
+                    <th data-trans="book-title" onclick="onThClick('title')" style="cursor: pointer;">⇅ Title</th>
+                    <th data-trans="book-price" onclick="onThClick('price')" style="cursor: pointer;">⇅ Price</th>
                     <th></th>
                     <!--center the actions in ugly way-->
-                    <th style="cursor: default;">Actions</th>
+                    <th data-trans="book-actions" style="cursor: default;">Actions</th>
                     <!--center the actions in ugly way-->
                     <th></th>
                     <!--center the actions in ugly way-->
@@ -44,18 +51,19 @@
     </section>
 
     <div class="modal" hidden>
-        <h4>details</h4>
+        <h4 ></h4>
         <h5></h5>
         <span class="image"></span>
         <span class="desc-cont">
             <p></p>
         </span>
         <span class="rate-cont"></span>
-        <button class="close" onclick="onCloseModal()">Close</button>
+        <button data-trans="close-modal" class="close" onclick="onCloseModal()">Close</button>
     </div>
 
 
     <script src="./js/util-service.js"></script>
+    <script src="./js/i18n-service.js"></script>
     <script src="./js/storage-service.js"></script>
     <script src="./js/books-service.js"></script>
     <script src="./js/books-controller.js"></script>

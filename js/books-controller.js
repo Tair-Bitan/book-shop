@@ -1,6 +1,7 @@
 'use strict'
 
 function onInit() {
+    doTrans();
     renderBooks();
     renderNames();
 }
@@ -12,14 +13,14 @@ function renderBooks() {
             <tr>
                 <td>${book.id}</td>
                 <td><img class="book-img-top" src="img/${book.name}.jpg"></td>
-                <td><h3>${book.name}</h3></td>
-                <td>${book.price}$</td>
-                <td> <button class="read-btn" onclick="onReadbook('${book.id}')"> Read </button> </td>
-                <td> <button class="update-btn" onclick="onUpdatebook('${book.id}')"> Update </button>
+                <td><h3 data-trans="add-book-${book.name}">${book.name}</h3></td>
+                <td>${book.price}<span data-trans="currency">$</span></td>
+                <td> <button data-trans="read-book" class="read-btn" onclick="onReadbook('${book.id}')"> Read </button> </td>
+                <td> <button data-trans="update-book" class="update-btn" onclick="onUpdatebook('${book.id}')"> Update </button>
                     <br>
-                    <input type="number" name="updatePrice" placeholder="Update Price" />
+                    <input data-trans="update-book-place-holder" type="number" name="updatePrice" placeholder="Update Price" />
                      </td>
-                <td> <button class="delete-btn" onclick="onDeletebook('${book.id}')"> Delete </button> </td>
+                <td> <button data-trans="delete-book" class="delete-btn" onclick="onDeletebook('${book.id}')"> Delete </button> </td>
             </tr>
         `
     })
@@ -66,7 +67,7 @@ function onUpdatebook(bookId) {
 function onReadbook(bookId) {
     var book = getBookById(bookId);
     var elModal = document.querySelector('.modal')
-    elModal.querySelector('h4').innerText = book.name;
+    elModal.querySelector('h4').innerHTML =`<h4>${book.name}</h4>`;
     elModal.querySelector('h5').innerText = book.price;
     elModal.querySelector('.image').innerHTML = `<img class="book-img-top" src="img/${book.name}.jpg">`;
     elModal.querySelector('p').innerText = makeLorem(30);
@@ -98,4 +99,11 @@ function onThClick(sortBy) {
 function onChangePage(diff) {
     changePage(diff);
     renderBooks();
+}
+
+function onSetLang(lang) {
+    setLang(lang);
+    if (lang === 'he') document.body.classList.add('rtl');
+    else document.body.classList.remove('rtl');
+    doTrans();
 }
