@@ -66,7 +66,7 @@ function onUpdatebook(bookId) {
 
 function onReadbook(bookId) {
     var book = getBookById(bookId);
-    var elModal = document.querySelector('.modal')
+    var elModal = document.querySelector('.my-modal')
     elModal.querySelector('h4').innerHTML =`<h4>${book.name}</h4>`;
     elModal.querySelector('h5').innerText = book.price;
     elModal.querySelector('.image').innerHTML = `<img class="book-img-top" src="img/${book.name}.jpg">`;
@@ -80,7 +80,7 @@ function onReadbook(bookId) {
 }
 
 function onCloseModal() {
-    document.querySelector('.modal').style.display = 'none';
+    document.querySelector('.my-modal').style.display = 'none';
 }
 
 function onAddRate(bookId) {

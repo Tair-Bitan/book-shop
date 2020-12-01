@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Own CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <title>Book Store</title>
 </head>
@@ -18,11 +22,6 @@
         <input data-trans="add-book-placeholder" type="number" name="price" placeholder="Price" style="width: 70px; " />
         <button data-trans="add" onclick="onAddBook()">Add Book</button>
     </section>
-    <div class="paging">
-        <button class="previous" onclick="onChangePage(-1)">&lt;</button>
-        <span class="page-num">1</span>
-        <button class="next" onclick="onChangePage(1)">&gt;</button>
-    </div>
     <div class="lang">
         <select onchange="onSetLang(this.value)">
             <option value="en">English</option>
@@ -30,6 +29,13 @@
             <option value="he">עברית</option>
         </select>
     </div>
+    <nav class="paging " aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><button class="previous page-link" onclick="onChangePage(-1)">←</button></li>
+            <li class="page-item"><span class="page-num page-link">1</span></li>
+            <li class="page-item"><button class="next page-link" onclick="onChangePage(1)">→</button></li>
+        </ul>
+    </nav>
     <section class="books-table-container">
         <table class="books-table">
             <thead>
@@ -50,8 +56,8 @@
         </table>
     </section>
 
-    <div class="modal" hidden>
-        <h4 ></h4>
+    <div class="my-modal" style="display: none;">
+        <h4></h4>
         <h5></h5>
         <span class="image"></span>
         <span class="desc-cont">
@@ -61,6 +67,8 @@
         <button data-trans="close-modal" class="close" onclick="onCloseModal()">Close</button>
     </div>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 
     <script src="./js/util-service.js"></script>
     <script src="./js/i18n-service.js"></script>
