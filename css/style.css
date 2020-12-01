@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     align-content: center;
-    background-image: url('/img/background.jpg');
+    background-image: url('../img/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -44,8 +44,8 @@ h2 {
 
 .books-table-container {
     margin: 10px auto;
-    padding-right: 15px ;
-    padding-left: 10px ;
+    padding-right: 15px;
+    padding-left: 10px;
     background-color: rgba(240, 255, 240, 0.5);
     border-radius: 10px;
 }
@@ -167,4 +167,10 @@ td {
     background-color: honeydew;
     border: none;
     font-weight: bold;
+}
+
+@media only screen and (max-height: 700px) {
+    .modal {
+        top: 10%;
+    }
 }

@@ -68,7 +68,7 @@ function onReadbook(bookId) {
     var elModal = document.querySelector('.modal')
     elModal.querySelector('h4').innerText = book.name;
     elModal.querySelector('h5').innerText = book.price;
-    elModal.querySelector('.image').innerHTML = `<img class="book-img-top" src="img/${book.name}.jpg">`;
+    elModal.querySelector('.image').innerHTML = `<img class="book-img-top" src="/img/${book.name}.jpg">`;
     elModal.querySelector('p').innerText = makeLorem(30);
     elModal.querySelector('.rate-cont').innerHTML = `
                                                     <button class="reduce-rate" onclick="onReduceRate('${book.id}')">-</button>
